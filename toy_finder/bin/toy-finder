@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require_relative "../lib/toy_finder
+require_relative "../lib/toy_finder"
 
 ToyFinder::CLI.new.call
