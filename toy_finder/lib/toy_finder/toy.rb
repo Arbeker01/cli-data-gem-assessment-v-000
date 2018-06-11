@@ -16,6 +16,28 @@ class ToyFinder::Toy
 		toys
 	end
 
+	def self.scrape_chewy
+		doc = Nokogiri::HTML(open("https://funandfunction.com/therapist-picks/chewer-or-biter.html"))
+
+		toy = self.new
+		toy.name = doc.search("h2.product-name").first.text
+		toy.price = doc.search("span.price").first.text
+		toy.description = doc.search("div.desc-text")[0].text.strip
+
+		toy
+	end
+
+	def self.scrape_agitated
+		doc = Nokogiri::HTML(open("https://funandfunction.com/therapist-picks/agitated.html"))
+
+		toy = self.new
+		toy.name = doc.search("h2.product-name").first.text
+		toy.price = doc.search("span.price").first.text.strip
+		toy.description = doc.search("div.desc-text")[0].text.strip
+
+		toy
+	end
+
 	def self.scrape_sleep_challenged
 		doc = Nokogiri::HTML(open("https://funandfunction.com/therapist-picks/sleep-challenged.html"))
 
@@ -27,25 +49,4 @@ class ToyFinder::Toy
 		toy
 	end
 
-		def self.scrape_chewy
-			doc = Nokogiri::HTML(open("https://funandfunction.com/therapist-picks/chewer-or-biter.html"))
-
-			toy = self.new
-			toy.name = doc.search("h2.product-name").first.text
-			toy.price = doc.search("span.price").first.text
-      toy.description = doc.search("div.desc-text")
-
-			toy
-		end
-
-    def self.scrape_agitated
-			doc = Nokogiri::HTML(open("https://funandfunction.com/therapist-picks/agitated.html"))
-
-			toy = self.new
-			toy.name = doc.search("h2.product-name").first.text
-			toy.price = doc.search("span.price").first.text.strip
-			toy.description = doc.search("div.desc-text")[0].text.strip
-
-			toy
-		end
 end

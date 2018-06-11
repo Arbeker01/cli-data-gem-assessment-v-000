@@ -1,6 +1,6 @@
 # ToyFinder
 
-ToyFinder is my first CLI gem project at Flatiron School. It will pull specialized toys and gadgets from funandfunction.com to aid parents and caregivers in caring for kids with special needs. When the gem is initialized, the user will be greeted with an inspirational/encouraging “Quote of the day” and presented with a list of toys/gadgets (based on specialized use) to choose from. Each option will display the specified toy and give specifics on the name, price, and further description of the product. Upon completed of the transaction, the user can exit the program.
+ToyFinder is my first CLI gem project at Flatiron School. It will pull specialized toys and gadgets from funandfunction.com to aid parents and caregivers in caring for kids with special needs. When the gem is initialized, the user will be greeted with a list of toys/gadgets (based on specialized use) to choose from. Each option will display the specified toy and give specifics on the name, price, and further description of the product. Upon completed of the transaction, the user can exit the program.
 
 ## Installation
 
