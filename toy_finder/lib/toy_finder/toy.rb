@@ -1,23 +1,30 @@
 require "pry"
 class ToyFinder::Toy
+	@@all = []
 	attr_accessor :name, :price, :description
-	
+
+	def self.all
+		@@all
+	end
 	# add a class variable, an array,  to hold all toy instances, typcially @@all
 	# every time a new toy is instantiated, it should be added to @@all
 	# from the CLI class, refer to @@all to load the toy list, which means...
 	#  .. we will have to build a class getter methiod for @@all
 
-	def self.today
-		self.scrape_toys
-	end
+	#def self.today
+		#self.scrape_toys
+	#end
+	
 
 	def self.scrape_toys
-		toys = []
-		toys << self.scrape_chewy
-		toys << self.scrape_agitated
-		toys << self.scrape_sleep_challenged
+		
+		 self.scrape_chewy
+		 self.scrape_agitated
+		 self.scrape_sleep_challenged
 
-		toys
+	end
+	def save
+		@@all << self
 	end
 
 	def self.scrape_chewy
@@ -28,7 +35,7 @@ class ToyFinder::Toy
 		toy.price = doc.search("span.price").first.text
 		toy.description = doc.search("div.desc-text")[0].text.strip
 
-		toy
+		toy.save
 	end
 
 	def self.scrape_agitated
@@ -39,7 +46,7 @@ class ToyFinder::Toy
 		toy.price = doc.search("span.price").first.text.strip
 		toy.description = doc.search("div.desc-text")[0].text.strip
 
-		toy
+		toy.save
 	end
 
 	def self.scrape_sleep_challenged
@@ -50,7 +57,7 @@ class ToyFinder::Toy
 		toy.price = doc.search("span.price")[0].text.strip
 		toy.description = doc.search("div.desc-text")[0].text.strip
 
-		toy
+		toy.save
 	end
 
 end
