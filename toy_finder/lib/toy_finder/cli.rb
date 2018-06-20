@@ -5,11 +5,6 @@ class ToyFinder::CLI
 		menu
 	end
 
-	def method 
-		puts "hello"
-		"cheese"
-	end 
-
 	def list_toys
 		puts <<~DOC
            Hello and welcome to ToyFinder!
