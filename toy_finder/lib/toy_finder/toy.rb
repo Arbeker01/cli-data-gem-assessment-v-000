@@ -6,7 +6,6 @@ class ToyFinder::Toy
 		self.scrape_toys
 	end
 
-
 	def self.scrape_toys
 		toys = []
 		toys << self.scrape_chewy
