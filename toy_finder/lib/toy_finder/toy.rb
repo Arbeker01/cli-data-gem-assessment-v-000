@@ -14,10 +14,10 @@ class ToyFinder::Toy
 	#def self.today
 		#self.scrape_toys
 	#end
-	
+
 
 	def self.scrape_toys
-		
+
 		 self.scrape_chewy
 		 self.scrape_agitated
 		 self.scrape_sleep_challenged

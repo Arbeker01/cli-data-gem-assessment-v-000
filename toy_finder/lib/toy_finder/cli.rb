@@ -1,6 +1,7 @@
 class ToyFinder::CLI
 	def call
-    list_toys
+		ToyFinder::Toy.scrape_toys
+		list_toys
 		menu
 	end
 
@@ -9,7 +10,7 @@ class ToyFinder::CLI
            Hello and welcome to ToyFinder!
            Below is a list of specialized toys for your child.
           DOC
-		    @toys = ToyFinder::Toy.today
+		    @toys = ToyFinder::Toy.all
         @toys.each.with_index(1) do |toy, i|
             #puts "#{i}. #{toy.name} - #{toy.price} - #{toy.url}"
 						puts "#{i}. #{toy.name} - #{toy.price}"
