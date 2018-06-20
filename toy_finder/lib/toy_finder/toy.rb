@@ -1,6 +1,11 @@
 require "pry"
 class ToyFinder::Toy
 	attr_accessor :name, :price, :description
+	
+	# add a class variable, an array,  to hold all toy instances, typcially @@all
+	# every time a new toy is instantiated, it should be added to @@all
+	# from the CLI class, refer to @@all to load the toy list, which means...
+	#  .. we will have to build a class getter methiod for @@all
 
 	def self.today
 		self.scrape_toys
