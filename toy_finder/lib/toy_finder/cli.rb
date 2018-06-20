@@ -1,5 +1,4 @@
 class ToyFinder::CLI
-
 	def call
     list_toys
 		menu
