@@ -1,6 +1,9 @@
 # Build a CLI Application with External Data
 
 ## Overview
+Close
+
+
 
 In this lesson you're going to build an application that provides a Command Line Interface (CLI) to an external data source. The CLI will be composed of an Object Oriented Ruby application. 
 
